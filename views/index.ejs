@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service Status</title>
+    <link href="/assets/css/tailwind.css" rel="stylesheet" />
+    <script src="./node_modules/lodash/lodash.min.js"></script>
+    <script src="./node_modules/apexcharts/dist/apexcharts.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="./node_modules/apexcharts/dist/apexcharts.css"
+    />
+    <script src="./node_modules/preline/dist/helper-apexcharts.js"></script>
+    <script src="./assets/js/globals.js">
+
+    </script>
+    <script src="./assets/js/charts.js">
+
+    </script>
+  </head>
+
+  <body class="bg-gray-100 dark:bg-neutral-900 py-10">
+    <div
+      class="flex flex-col items-center justify-center min-h-screen px-4 md:px-10"
+    >
+      <h1
+        class="text-2xl md:text-4xl font-cal dark:text-neutral-200 mb-6 w-full max-w-4xl"
+      >
+        Service Status
+      </h1>
+
+      <!-- Main Status Box -->
+      <div
+        class="bg-[rgba(255, 255, 255, 0.7)] dark:bg-neutral-800/70 dark:border dark:border-neutral-700 backdrop-filter backdrop-blur-[10px] shadow-lg dark:shadow-none rounded-lg p-6 w-full max-w-4xl mb-10"
+      >
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="flex items-center mb-4 md:mb-0">
+            <span class="relative flex w-6 h-6 md:w-8 md:h-8 mr-4">
+              <span
+                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"
+              ></span>
+              <span
+                class="relative inline-flex rounded-full w-6 h-6 md:w-8 md:h-8 bg-green-500"
+              ></span>
+            </span>
+            <span class="text-xl md:text-3xl text-white font-bold font-cal mt-1"
+              >All Systems Operational</span
+            >
+          </div>
+          <span class="text-neutral-300 text-sm md:text-base"
+            >Last checked: 6:61 AM</span
+          >
+        </div>
+      </div>
+
+      <!-- Services Section -->
+      <div class="w-full max-w-4xl">
+        <h2 class="text-xl md:text-2xl font-cal dark:text-neutral-300 mb-4">
+          Services
+        </h2>
+        <div class="grid grid-cols-1"></div>
+      </div>
+
+      <!-- Historical Uptime -->
+      <div
+        class="bg-[rgba(255, 255, 255, 0.7)] dark:bg-neutral-800/70 dark:border dark:border-neutral-700 backdrop-filter backdrop-blur-[10px] shadow-lg dark:shadow-none rounded-lg p-6 w-full max-w-4xl mb-10"
+      >
+        <h2 class="text-xl md:text-2xl font-semibold text-neutral-300 font-cal">
+          Historical Uptime
+        </h2>
+        <div class="mt-4">
+          <img
+            src="https://via.placeholder.com/600x200.png?text=Uptime+Graph"
+            alt="Uptime Graph"
+            class="rounded-lg w-full"
+          />
+          <p class="mt-2 text-gray-600 text-sm">Uptime for the last 30 days</p>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="mt-10 text-gray-600 text-center">
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      function makemon(name, url) {
+        axios
+          .post("/api/monitor/make", { name: name, url: url })
+          .then((res) => {
+            console.log(res);
+          });
+      }
+    </script>
+  </body>
+</html>

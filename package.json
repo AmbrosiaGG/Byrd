@@ -1,0 +1,21 @@
+{
+    "name": "byrd",
+    "version": "1.0.0",
+    "scripts": {
+        "build": "tailwind -i ./assets/css/global.css -o ./assets/css/tailwind.css --watch"
+    },
+    "dependencies": {
+        "apexcharts": "^3.54.1",
+        "axios": "^1.7.7",
+        "body-parser": "^1.20.3",
+        "cal-sans": "^1.0.1",
+        "chalk": "4.x",
+        "ejs": "^3.1.10",
+        "express": "^4.21.1",
+        "express-session": "^1.18.1",
+        "mongoose": "^8.7.2",
+        "preline": "^2.5.1",
+        "request-ip": "^3.3.0",
+        "tailwindcss": "^3.4.14"
+    }
+}
